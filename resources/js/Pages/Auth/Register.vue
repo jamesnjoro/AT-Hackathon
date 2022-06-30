@@ -14,6 +14,7 @@ const form = useForm({
     password: '',
     password_confirmation: '',
     terms: false,
+    userType: ''
 });
 
 const submit = () => {
@@ -57,6 +58,13 @@ const submit = () => {
                     required
                 />
             </div>
+            <div class="mt-4">
+                <JetLabel for="userType" value="User Type" />
+                <select v-model="form.userType" id='userType' class="mt-1 block w-full">
+                    <option value='normal'>normal</option>
+                    <option value="business">business</option>
+                </select>
+            </div>
 
             <div class="mt-4">
                 <JetLabel for="password" value="Password" />
@@ -93,6 +101,8 @@ const submit = () => {
                     </div>
                 </JetLabel>
             </div>
+
+            
 
             <div class="flex items-center justify-end mt-4">
                 <Link :href="route('login')" class="underline text-sm text-gray-600 hover:text-gray-900">

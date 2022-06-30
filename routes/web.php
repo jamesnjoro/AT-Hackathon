@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\ShopsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,9 @@ Route::get('/', function () {
 
 Route::get('/shop', function () {
     return Inertia::render('Shop');
-});
+})->name('shop');
+
+Route::post('shop/buy',[ShopsController::class,'buy']);
 
 Route::middleware([
     'auth:sanctum',

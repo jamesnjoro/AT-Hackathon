@@ -14,39 +14,39 @@ const products = ref([
     {
         id: 1,
         name: 'Product 1',
-        price: '$10.00',
+        price: '10',
     },
     {
         id: 2,
         name: 'Product 2',
-        price: '$20.00',
+        price: '20',
     },
     {
         id: 3,
         name: 'Product 3',
-        price: '$30.00',
+        price: '30',
     },
     {
         id: 4,
         name: 'Product 4',
-        price: '$40.00',
+        price: '40',
     },
     {
         id: 5,
         name: 'Product 5',
-        price: '$50.00',
+        price: '50',
     },
     {
         id: 6,
         name: 'Product 6',
-        price: '$60.00',
+        price: '60',
     }
 ]);
 
 const form = useForm(({
-    produt_name:'',
+    product_name:'',
     price:'',
-    shopId:'',
+    shop_id:'',
     product_id:'',
     number:''
 }))
@@ -55,7 +55,7 @@ function buy(id){
     
     //find product by id
     const product = products.value.find(product => product.id === id);
-    form.produt_name = product.name;
+    form.product_name = product.name;
     form.price = product.price;
     form.product_id = product.id;
 
@@ -94,9 +94,9 @@ function buy(id){
     </div>
     <form>
         <input v-model="form.number" type="number" placeholder="enter number"/>
-        <select v-model="form.shopId">
+        <select v-model="form.shop_id">
             <option disabled>Select Shop</option>
-
+            <option value='1'>Shop 1</option>
         </select>
     </form>
 
